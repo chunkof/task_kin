@@ -21,8 +21,6 @@ div {
     border: black 1px solid;
 }
 
-
-
 ul {
     padding-bottom: 1em;
 }
@@ -60,9 +58,21 @@ ul {
     cursor: default;
     color: #AAA;
 }
+.task_wrapper {
+    width: 125px;
+    position: relative;
+}
+.task_container{
+    position: absolute;
+    z-index: 2;
+    border-color : rgba(0, 0, 0, 0);
+}
 .cursor_container{
+    position: absolute;
+    z-index: 1;
     width: 140px;
     background-color: rgba(0, 0, 0, 0);
+    border-color : rgba(0, 0, 0, 0);
 }
 .cursor {
     width: 140px;
@@ -71,7 +81,8 @@ ul {
     text-align: center;
 }
 .blankCursor {
-    background-color: rgba(100, 110, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0);
+    border-color : rgba(0, 0, 0, 0);
 }
 .item input {
     width: 100px;
