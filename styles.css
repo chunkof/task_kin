@@ -1,0 +1,90 @@
+body {
+    font-family: arial;
+}
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size : 1.2em;
+    margin: 0.3em;
+}
+h4 {
+    text-align: center;
+    font-weight: bold;
+    font-size : 0.8em;
+    margin: 1.0em 0.5em 0.1em 0.5em;
+
+}
+div {
+    padding: 0.3em;
+    margin: 0.3em;
+    border: black 1px solid;
+}
+
+
+
+ul {
+    padding-bottom: 1em;
+}
+
+.ko_container {
+    width: 125px;
+    min-height: 32px;
+    background-color: #AAA;
+}
+
+.trash_wrapper {
+    position: relative;
+    height: 80px;
+}
+.trash {
+    background-color: #000;
+    position: absolute;
+}
+.trash_message {
+    color: #888;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    width: 125px;
+    height: 32px;
+    text-align: center;
+}
+.item {
+    background-color: rgba(200, 200, 200, 0.9);
+    cursor: move;
+    text-align: center;
+    height: 22px;
+}
+.item.ui-state-disabled {
+    cursor: default;
+    color: #AAA;
+}
+.cursor_container{
+    width: 140px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.cursor {
+    width: 140px;
+    background-color: rgba(200, 0, 0, 0.3);
+    cursor: move;
+    text-align: center;
+}
+
+.item input {
+    width: 100px;
+}
+.right{
+    text-align: right;
+}
+
+#main {
+    float: left;
+    width: 150px;
+    margin-top: 0px;
+}
+
+.menu {
+    margin-left: 175px;
+    width: 150px;
+}
