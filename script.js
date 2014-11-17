@@ -49,6 +49,7 @@ var ViewModel = function() {
         new Cursor(false),
         new Cursor(false),
         new Cursor(false),
+        new Cursor(false),
         new Cursor(false)
     ]);
 
@@ -87,3 +88,4 @@ ko.bindingHandlers.visibleAndSelect = {
 };
 
 ko.applyBindings(new ViewModel());
+
