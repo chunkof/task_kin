@@ -33,16 +33,11 @@
               data:cursors
              ,connectClass:'cursor_container'
              ,options:{
-                  axis:'y'
-                 ,items:'.activeCursor'
+                   axis:'y'
+                  ,cancel:'.blankCursor'
                 }
              }">
-            <span data-bind="visible: active">
-                <div class="cursor item activeCursor" data-bind="text:name"></div>
-            </span>
-            <span data-bind="visible: deactive">
-                <div class="cursor item deactiveCursor" data-bind="text:name"></div>
-            </span>
+             <div class="cursor item " data-bind="css: { blankCursor:blank }"></div>
         </div>
     <p class="right">
         <a href="#">+Add Task</a>

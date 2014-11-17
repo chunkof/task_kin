@@ -3,7 +3,7 @@ var Task = function(name) {
 };
 var Cursor = function(active) {
     this.active = ko.observable(active);
-    this.deactive = ko.observable(!active);
+    this.blank = ko.observable(!active);
     this.name = ko.observable(active ? "Active" : "-" );
 };
 Task.prototype.clone = function() {

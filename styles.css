@@ -70,7 +70,9 @@ ul {
     cursor: move;
     text-align: center;
 }
-
+.blankCursor {
+    background-color: rgba(100, 110, 0, 0.3);
+}
 .item input {
     width: 100px;
 }
