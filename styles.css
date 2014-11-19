@@ -54,35 +54,22 @@ ul {
     text-align: center;
     height: 22px;
 }
-.item.ui-state-disabled {
-    cursor: default;
-    color: #AAA;
-}
 .task_wrapper {
     width: 125px;
     position: relative;
 }
 .task_container{
-    position: absolute;
+    position: relative;
     z-index: 2;
     border-color : rgba(0, 0, 0, 0);
 }
-.cursor_container{
-    position: absolute;
-    z-index: 1;
-    width: 140px;
-    background-color: rgba(0, 0, 0, 0);
-    border-color : rgba(0, 0, 0, 0);
-}
 .cursor {
+    position: absolute;
     width: 140px;
     background-color: rgba(200, 0, 0, 0.3);
     cursor: move;
     text-align: center;
-}
-.blankCursor {
-    background-color: rgba(0, 0, 0, 0);
-    border-color : rgba(0, 0, 0, 0);
+    height:22px;
 }
 .item input {
     width: 100px;
