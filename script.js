@@ -1,10 +1,9 @@
 var Task = function(name) {
     this.name = ko.observable(name);
 };
-var Cursor = function(active) {
-    this.active = ko.observable(active);
-    this.blank = ko.observable(!active);
-    this.name = ko.observable(active ? "Active" : "-" );
+var Cursor = function() {
+    this.nayme = "cc";
+    this.current_y  = '300px';
 };
 Task.prototype.clone = function() {
     return new Task(this.name());
@@ -44,15 +43,12 @@ var ViewModel = function() {
     //===================
     // Cursor
     //===================
-    self.cursors =ko.observableArray([
-        new Cursor(true),
-        new Cursor(false),
-        new Cursor(false),
-        new Cursor(false),
-        new Cursor(false),
-        new Cursor(false)
-    ]);
+    self.cursor = new Cursor();
+    self.cursor_y = '200px';
 
+    self.cursorStopped = function(ev,property) {
+        console.log("clientY=" + property.position.top);
+    };
     // Add Task
     self.newTask = new Task("New Task");
 
