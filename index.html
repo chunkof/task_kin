@@ -16,21 +16,25 @@
 
 <body>
 <div id="main" class="task_wrapper">
-    <!-- Tasks -->
-    <h3>Tasks</h3>
-        <div class="cursor"
+  <!-- Tasks -->
+  <h3>Tasks</h3>
+  <div class="task_box">
+        <div id="cursor"
              data-bind="
              draggable:
                  { data:cursor
                  , options:{
                        axis  :'y'
-                     , grid : [0,24]
+                     , grid : [0,18]
                      , helper : 'original'
                      , stop : $root.cursorStopped
+                     , containment : 'parent'
                     }
                  }
-                 ,
-            style:{top:cursor_y}">
+            ,style:{
+                     top : cursor().cursor_y
+                    ,left: cursor().cursor_x}
+            ">
         </div>
 
         <div class="task_container task_draggable" data-bind="sortable: {data:tasks,  connectClass:'task_draggable'}">
@@ -43,10 +47,10 @@
                 </span>
             </div>
         </div>
-
-    <p class="right">
-        <a href="#">+Add Task</a>
-    </p>
+  </div>
+  <p class="right">
+    <a href="#">+Add Task</a>
+  </p>
 </div>
 
 

@@ -2,16 +2,11 @@ var Task = function(name) {
     this.name = ko.observable(name);
 };
 var Cursor = function() {
-    this.nayme = "cc";
-    this.current_y  = '300px';
+    this.cursor_x = ko.observable('-2px');
+    this.cursor_y = ko.observable('0px');
 };
 Task.prototype.clone = function() {
     return new Task(this.name());
-};
-
-var ViewModel2 = function() {
-    var self = this;
-
 };
 
 var ViewModel = function() {
@@ -43,11 +38,11 @@ var ViewModel = function() {
     //===================
     // Cursor
     //===================
-    self.cursor = new Cursor();
-    self.cursor_y = '200px';
-
+    self.cursor = ko.observable(new Cursor());
     self.cursorStopped = function(ev,property) {
-        console.log("clientY=" + property.position.top);
+        var y = ((property.position.top)/18).toFixed()*18;
+        console.log("clientY=" + y);
+        self.cursor().cursor_y(y+'px');
     };
     // Add Task
     self.newTask = new Task("New Task");
@@ -56,6 +51,7 @@ var ViewModel = function() {
     self.trash = ko.observableArray([]);
     self.removeAll = function(arg){
         arg.targetParent.removeAll();
+      //  self.cursor().cursor_x("200px");
     };
 
     // Sort

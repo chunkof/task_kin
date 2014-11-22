@@ -53,17 +53,28 @@ ul {
     cursor: move;
     text-align: center;
     height: 22px;
+    margin:  4px;
+    padding: 4px;
+    border-width:  1px;
 }
 .task_wrapper {
+    width: 140px;
+    position: relative;
+}
+.task_box {
     width: 125px;
     position: relative;
+    padding: 0em;
+    margin: 0em;
 }
 .task_container{
     position: relative;
     z-index: 2;
     border-color : rgba(0, 0, 0, 0);
+    padding: 0em;
+    margin: 0em;
 }
-.cursor {
+#cursor {
     position: absolute;
     width: 140px;
     background-color: rgba(200, 0, 0, 0.3);
@@ -80,11 +91,11 @@ ul {
 
 #main {
     float: left;
-    width: 150px;
+    width: 160px;
     margin-top: 0px;
 }
 
 .menu {
-    margin-left: 175px;
-    width: 150px;
+    margin-left: 185px;
+    width: 160px;
 }
