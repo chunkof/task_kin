@@ -1,4 +1,4 @@
-var Task = function(name) {
+var Task = function (name) {
     this.name = ko.observable(name);
 };
 var Cursor = function() {
@@ -23,7 +23,7 @@ var ViewModel = function() {
         new Task("Read book")
     ]);
     self.selectedTask = ko.observable();
-    self.clearTask = function(data, event) {
+    self.clearTask = function(data) {
         if (data === self.selectedTask()) {
             self.selectedTask(null);
         }
@@ -40,9 +40,9 @@ var ViewModel = function() {
     //===================
     self.cursor = ko.observable(new Cursor());
     self.cursorStopped = function(ev,property) {
-        var y = ((property.position.top)/18).toFixed()*18;
+        var y = ((property.position.top) / 18).toFixed()*18;
         console.log("clientY=" + y);
-        self.cursor().cursor_y(y+'px');
+        self.cursor().cursor_y(y + 'px');
     };
     // Add Task
     self.newTask = new Task("New Task");
@@ -51,16 +51,15 @@ var ViewModel = function() {
     self.trash = ko.observableArray([]);
     self.removeAll = function(arg){
         arg.targetParent.removeAll();
-      //  self.cursor().cursor_x("200px");
     };
 
     // Sort
     self.sortTasks = function(){
         self.tasks.sort(function(left,right){
-            var l = left.name().toUpperCase();
-            var r = right.name().toUpperCase();
-            if (l < r) return -1;
-            if (l > r) return  1;
+            var l = left.name().toUpperCase(),
+                r = right.name().toUpperCase();
+            if (l < r){ return -1; }
+            if (l > r){ return +1; }
             return 0;
         });
     };
