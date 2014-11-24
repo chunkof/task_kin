@@ -1,0 +1,15 @@
+\¬
+	script
+		view_tasks.js
+		view_menu.js
+		view_task_detail.js
+
+		view_settings.js
+		¦todo:viewŒn‚Ídom—v‘f‚²‚Æ‚ÉapplyBindings‚·‚é
+
+		task.js
+			time_manager.js
+		storage.js
+		settings.js
+		
+		

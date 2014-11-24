@@ -89,13 +89,13 @@ ul {
     text-align: right;
 }
 
-#main {
+#view_tasks {
     float: left;
     width: 160px;
     margin-top: 0px;
 }
 
-.menu {
+#view_menu {
     margin-left: 185px;
     width: 160px;
 }

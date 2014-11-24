@@ -15,62 +15,55 @@
 </head>
 
 <body>
-<div id="main" class="task_wrapper">
-  <!-- Tasks -->
-  <h3>Tasks</h3>
-  <div class="task_box">
-        <div id="cursor"
-             data-bind="
-             draggable:
-                 { data:cursor
-                 , options:{
-                       axis  :'y'
-                     , grid : [0,18]
-                     , helper : 'original'
-                     , stop : $root.cursorStopped
-                     , containment : 'parent'
-                    }
-                 }
-            ,style:{
-                     top : cursor().cursor_y
-                    ,left: cursor().cursor_x}
-            ">
-        </div>
-
-        <div class="task_container task_draggable" data-bind="sortable: {data:tasks,  connectClass:'task_draggable'}">
-            <div class="item" span data-bind="click: $root.selectedTask">
-                <span data-bind="visible: !$root.isTaskSelected($data)">
-                    <span data-bind="text: name"></span>
-                </span>
-                <span data-bind="visibleAndSelect: $root.isTaskSelected($data)">
-                    <input data-bind="value: name, event: { blur: $root.clearTask}" />
-                </span>
+    <div id="view_tasks" class="task_wrapper">
+      <!-- Tasks -->
+      <h3>Tasks</h3>
+      <div class="task_box">
+            <div id="cursor"
+                 data-bind="
+                 draggable:
+                     { data:cursor
+                     , options:{
+                           axis  :'y'
+                         , grid : [0,18]
+                         , helper : 'original'
+                         , stop : $root.cursorStopped
+                         , containment : 'parent'
+                        }
+                     }
+                ,style:{
+                         top : cursor().cursor_y
+                        ,left: cursor().cursor_x}
+                ">
             </div>
-        </div>
-  </div>
-  <p class="right">
-    <a href="#">+Add Task</a>
-  </p>
-</div>
 
-
-<div class="menu">
-    <!-- Add Task -->
-    <h4>Add</h4>
-    <div class="item" data-bind="draggable: { data: newTask}">
-        <span data-bind="text: name"></span>
+            <div class="task_container task_draggable" data-bind="sortable: {data:tasks,  connectClass:'task_draggable'}">
+                <div class="item" span data-bind="click: $root.selectedTask">
+                    <span data-bind="visible: !$root.isTaskSelected($data)">
+                        <span data-bind="text: name"></span>
+                    </span>
+                    <span data-bind="visibleAndSelect: $root.isTaskSelected($data)">
+                        <input data-bind="value: name, event: { blur: $root.clearTask}" />
+                    </span>
+                </div>
+            </div>
+      </div>
+      <p class="right">
+          <a href="#" data-bind="click: addTask">+Add Task</a>
+      </p>
     </div>
-</div>
 
-<!-- Trash -->
-<div class="trash_wrapper menu" >
-    <h4>Delete</h4>
-    <div class="trash task_draggable" data-bind="sortable: {data:trash, afterMove:removeAll}"></div>
-    <div class="trash_message">Drop&nbsp;Here</div>
-</div>
 
-    <!-- Buttons -->
-    <button data-bind="click: sortTasks">sort</button>  
+    <div id="view_menu"  >
+        <div class="trash_wrapper">
+        <!-- Trash -->
+        <h4>Delete</h4>
+            <div class="trash task_draggable" data-bind="sortable: {data:trash, afterMove:removeAll}"></div>
+        <div class="trash_message">Drop&nbsp;Here</div>
+        </div>
+        <!-- Buttons -->
+        <button data-bind="click: sortTasks">sort</button>
+    </div>
 
 </body>
 </html>

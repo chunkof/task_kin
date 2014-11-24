@@ -41,19 +41,30 @@ var ViewModel = function() {
     self.cursor = ko.observable(new Cursor());
     self.cursorStopped = function(ev,property) {
         var y = ((property.position.top) / 18).toFixed()*18;
-        console.log("clientY=" + y);
+        self.cursor().cursor_x('-2px');
         self.cursor().cursor_y(y + 'px');
     };
-    // Add Task
-    self.newTask = new Task("New Task");
 
+    //===================
+    // Add Task
+    //===================
+    self.addTask = function() {
+        var task = new Task("new");
+        self.selectedTask(task);
+        self.tasks.push(task);
+    };
+
+    //===================
     // Trash
+    //===================
     self.trash = ko.observableArray([]);
     self.removeAll = function(arg){
         arg.targetParent.removeAll();
     };
 
+    //===================
     // Sort
+    //===================
     self.sortTasks = function(){
         self.tasks.sort(function(left,right){
             var l = left.name().toUpperCase(),
